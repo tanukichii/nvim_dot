@@ -7,6 +7,14 @@ return {
 			python = { "black" },
 			go = { "gofumpt", "goimports", "golines" },
 		},
+
+		formatters = {
+			goimports_reviser = { -- for goimports-reviser
+				command = "goimports-reviser",
+				args = { "-rm-unused", "$FILENAME" },
+				stdin = false,
+			},
+		},
 		format_on_save = {
 			timeout_ms = 15000,
 			lsp_fallback = true,
