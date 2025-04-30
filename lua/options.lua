@@ -2,7 +2,7 @@ vim.opt.spell = false -- disable spelling checking
 
 vim.opt.encoding = "utf-8" -- set encoding
 vim.opt.nu = true -- enable line numbers
-vim.opt.relativenumber = true -- relative line numbers
+vim.opt.relativenumber = false -- relative line numbers
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -26,4 +26,4 @@ vim.opt.sidescrolloff = 8 --minimum number of columns to keep above and below th
 vim.opt.wrap = false -- disable wrapping lines if exceed screen width
 
 -- format
-vim.opt.textwidth = 100
+vim.opt.textwidth = 150
