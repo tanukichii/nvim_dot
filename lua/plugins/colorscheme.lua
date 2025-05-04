@@ -9,6 +9,7 @@ return {
 			emphasis = false,
 			folds = false,
 		},
+		transparent_mode = false,
 	},
 }
 
