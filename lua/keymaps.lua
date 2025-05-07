@@ -1,5 +1,6 @@
 -- this file is for non plugin related keymaps
 --
+--
 -- yank to clipboard
 -- some information on yank buffers:
 -- "+... is the windows clipboard buffer, and the nvim one is ""...
