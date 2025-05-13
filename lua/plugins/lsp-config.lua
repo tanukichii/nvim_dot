@@ -121,7 +121,7 @@ return {
 									diagnostics = {
 										globals = { "vim" },
 									},
-									telementry = { enable = false },
+									telemetry = { enable = false },
 								},
 							},
 						})

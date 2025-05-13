@@ -6,6 +6,8 @@ return {
 			lua = { "stylua" },
 			python = { "black" },
 			go = { "gofumpt", "goimports", "golines" },
+			html = { "prettier" },
+			javascript = { "prettier" },
 		},
 
 		formatters = {

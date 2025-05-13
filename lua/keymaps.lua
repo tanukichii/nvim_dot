@@ -22,3 +22,6 @@ vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increa
 -- select previous after indenting
 vim.keymap.set("v", "<", "<gv", { desc = "Keep selection after indenting" })
 vim.keymap.set("v", ">", ">gv", { desc = "Keep selection after indenting" })
+
+-- neo tree
+vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>")
