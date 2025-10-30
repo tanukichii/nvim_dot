@@ -58,6 +58,12 @@ return {
 						capabilities = capabilities,
 					})
 				end,
+				["clangd"] = function()
+					nvim_lsp["clangd"].setup({
+						on_attach = on_attach,
+						capabilities = capabilities,
+					})
+				end,
 			},
 		})
 	end,
