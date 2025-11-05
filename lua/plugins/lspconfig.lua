@@ -44,27 +44,41 @@ return {
 
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-		mason_lspconfig.setup({
-			handlers = {
-				function(server)
-					nvim_lsp[server].setup({
-						capabilities = capabilities,
-					})
-				end,
-
-				["pyright"] = function()
-					nvim_lsp["pyright"].setup({
-						on_attach = on_attach,
-						capabilities = capabilities,
-					})
-				end,
-				["clangd"] = function()
-					nvim_lsp["clangd"].setup({
-						on_attach = on_attach,
-						capabilities = capabilities,
-					})
-				end,
+		vim.lsp.config.clangd = {
+			on_attach = on_attach,
+			capabilities = capabilities,
+			cmd = {
+				"clangd",
+				"-j=" .. 2,
+				"--background-index",
+				"--clang-tidy",
+				"--inlay-hints",
+				"--fallback-style=llvm",
+				"--all-scopes-completion",
+				"--completion-style=detailed",
+				"--header-insertion=never",
+				"--header-insertion-decorators",
+				"--pch-storage=memory",
 			},
-		})
+			filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+			root_markers = {
+				"CMakeLists.txt",
+				".clangd",
+				".clang-tidy",
+				".clang-format",
+				"compile_commands.json",
+				"compile_flags.txt",
+				"configure.ac",
+				".git",
+				vim.uv.cwd(),
+			},
+		}
+		vim.lsp.enable("clangd")
+
+		vim.lsp.config.pyright = {
+			on_attach = on_attach,
+			capabilities = capabilities,
+		}
+		vim.lsp.enable("pyright")
 	end,
 }
